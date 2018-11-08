@@ -41,23 +41,17 @@ Development status - first version is out, now thinking of more things to add to
 
 ## Build instructions
 
-This mod depends on a very new version of Botania, which I couldn't find on any particular Mavens.
-
-* Download Botania version 356 from CurseForge
-* Run it through a tool like BON2 using `snapshot_20180407` mappings
-* Create a directory named `libs` alongside `src`, `gradle` etc
-* Put the deobfuscated Botania jar inside the `libs` directory
-* Build as usual
+This mod depends on Botania and Baubles grabbed from maven, so just build as usual.
 
 The buildscript also contains a few handy lines that allow you to set your Minecraft username and UUID when you launch your dev instance. This is useful for debugging things like soul cores. You must set neither or both, or else Minecraft will get really confused.
 
 * Discover your Minecraft UUID using a tool like https://mcuuid.net/
 * Create a file called `gradle.properties` in your Gradle home directory (on Windows at least, it's in `C:/Users/<username>/.gradle`)
 * Format the file like this:
-
-    mc_uuid=873dea16-d058-4343-861c-f62c21da124b
-    mc_username=quaternary
-
+```
+mc_uuid=873dea16-d058-4343-861c-f62c21da124b
+mc_username=quaternary
+```
 * Save, and launch the game through the usual methods
 
 ## License information

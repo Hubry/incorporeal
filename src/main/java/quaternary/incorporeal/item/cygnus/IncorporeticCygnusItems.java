@@ -150,21 +150,21 @@ public final class IncorporeticCygnusItems {
 	
 	private static void registerWordCard(BlockCygnusWord word, IForgeRegistry<Item> reg) {
 		ItemCygnusWordCard card = new ItemCygnusWordCard(word);
-		String name = Preconditions.checkNotNull(word.getRegistryName()).getResourcePath() + RegistryNames.cardSuffix;
+		String name = Preconditions.checkNotNull(word.getRegistryName()).getPath() + RegistryNames.cardSuffix;
 		registerItem(card, name, reg);
 		word.setAssociatedCard(card);
 	}
 	
 	private static void registerCrystalCard(BlockCygnusCrystalCube cube, IForgeRegistry<Item> reg) {
 		ItemCygnusCrystalCubeCard card = new ItemCygnusCrystalCubeCard(cube);
-		String name = Preconditions.checkNotNull(cube.getRegistryName()).getResourcePath() + RegistryNames.cardSuffix;
+		String name = Preconditions.checkNotNull(cube.getRegistryName()).getPath() + RegistryNames.cardSuffix;
 		registerItem(card, name, reg);
 		cube.setAssociatedCard(card);
 	}
 	
 	private static void registerItem(Item item, String name, IForgeRegistry<Item> reg) {
 		item.setRegistryName(new ResourceLocation(Incorporeal.MODID, name));
-		item.setUnlocalizedName(Incorporeal.MODID + "." + name);
+		item.setTranslationKey(Incorporeal.MODID + "." + name);
 		item.setCreativeTab(Incorporeal.TAB);
 		reg.register(item);
 	}

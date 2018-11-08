@@ -304,7 +304,7 @@ public final class IncorporeticCygnusBlocks {
 	
 	private static void registerBlock(Block block, String name, IForgeRegistry<Block> reg) {
 		block.setRegistryName(new ResourceLocation(Incorporeal.MODID, name));
-		block.setUnlocalizedName(Incorporeal.MODID + "." + name);
+		block.setTranslationKey(Incorporeal.MODID + "." + name);
 		block.setCreativeTab(Incorporeal.TAB);
 		
 		reg.register(block);

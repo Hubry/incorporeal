@@ -41,7 +41,8 @@ public class BlockNaturalRepeater extends AbstractBlockNaturalDevice {
 		worldIn.notifyNeighborsOfStateExcept(blockpos, this, enumfacing);
 	}
 	
-	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
+	@Override
+	public void onPlayerDestroy(World worldIn, BlockPos pos, IBlockState state) {
 		//Modified paste from redstonediode
 		if (state.getValue(LIT)) {
 			for (EnumFacing enumfacing : EnumFacing.values()) {
@@ -49,7 +50,7 @@ public class BlockNaturalRepeater extends AbstractBlockNaturalDevice {
 			}
 		}
 		
-		super.onBlockDestroyedByPlayer(worldIn, pos, state);
+		super.onPlayerDestroy(worldIn, pos, state);
 	}
 	
 	
@@ -64,8 +65,8 @@ public class BlockNaturalRepeater extends AbstractBlockNaturalDevice {
 			double d2 = (double)((float)pos.getZ() + 0.5F) + (double)(rand.nextFloat() - 0.5F) * 0.2D;
 			float f = (rand.nextBoolean() ? -5 : 7) / 16f;
 			
-			double d3 = (double)(f * (float)enumfacing.getFrontOffsetX());
-			double d4 = (double)(f * (float)enumfacing.getFrontOffsetZ());
+			double d3 = (double)(f * (float)enumfacing.getXOffset());
+			double d4 = (double)(f * (float)enumfacing.getZOffset());
 			world.spawnParticle(EnumParticleTypes.REDSTONE, d0 + d3, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
 		}
 	}

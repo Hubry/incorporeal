@@ -63,7 +63,7 @@ public final class Incorporeal {
 	public static final CreativeTabs TAB = new CreativeTabs(MODID) {
 		@SideOnly(Side.CLIENT)
 		@Override
-		public ItemStack getTabIconItem() {
+		public ItemStack createIcon() {
 			return new ItemStack(IncorporeticItems.TICKET_CONJURER);
 		}
 		
@@ -96,11 +96,11 @@ public final class Incorporeal {
 		
 		//TODO find a better home for these?
 		API.getNaturalDeviceRegistry().registerNaturalDevice((rand) -> {
-			return IncorporeticBlocks.NATURAL_REPEATER.getDefaultState().withProperty(BlockHorizontal.FACING, EnumFacing.getHorizontal(rand.nextInt(4)));
+			return IncorporeticBlocks.NATURAL_REPEATER.getDefaultState().withProperty(BlockHorizontal.FACING, EnumFacing.byHorizontalIndex(rand.nextInt(4)));
 		}, 80);
 		
 		API.getNaturalDeviceRegistry().registerNaturalDevice((rand) -> {
-			return IncorporeticBlocks.NATURAL_COMPARATOR.getDefaultState().withProperty(BlockHorizontal.FACING, EnumFacing.getHorizontal(rand.nextInt(4)));
+			return IncorporeticBlocks.NATURAL_COMPARATOR.getDefaultState().withProperty(BlockHorizontal.FACING, EnumFacing.byHorizontalIndex(rand.nextInt(4)));
 		}, 20);
 		
 		API.getCygnusDatatypeInfoRegistry().registerDatatype(new CygnusBigIntegerType());
